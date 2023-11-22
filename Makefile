@@ -27,13 +27,17 @@ define Package/redsocks2
 	CATEGORY:=Network
 	TITLE:=Redirect any TCP connection to a SOCKS or HTTPS proxy server
 	URL:=https://github.com/semigodking/redsocks
-	DEPENDS:=+libevent2 +libopenssl
+	DEPENDS:=+libevent2 + libopenssl + libevent
 endef
 
 define Package/redsocks2/description
 This is a modified version of original redsocks. \
 The name is changed to be REDSOCKS2 since this release to distinguish with original redsocks. \
 This variant is useful for anti-GFW (Great Fire Wall).
+endef
+
+define Package/redsocks2/extra_provides
+  echo libevent_openssl-2.1.so.7;
 endef
 
 define Package/redsocks2/conffiles
